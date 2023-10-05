@@ -3,13 +3,13 @@
   become: true
 
   tasks:
-    # - name: Install Nginx (for Debian-based systems)
-    #   apt:
-    #     name: nginx
-    #     state: present
-    #     update_cache: yes
+    - name: Install Nginx 
+      apt:
+        name: nginx
+        state: present
+        update_cache: yes
 
-    - name: Remove Nginx (for Debian-based systems)
+    - name: Remove Nginx 
       apt:
         name: nginx
         state: absent
