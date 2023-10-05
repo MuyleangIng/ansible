@@ -1,0 +1,10 @@
+---
+- hosts: nodes
+  become: true
+
+  tasks:
+    - name: install net-tool (for Debian-based systems)
+      apt:
+        name: net-tools
+        state: absent
+        update_cache: yes
