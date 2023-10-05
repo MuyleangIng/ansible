@@ -6,5 +6,5 @@
     - name: install net-tool (for Debian-based systems)
       apt:
         name: net-tools
-        state: absent
+        state: present
         update_cache: yes
