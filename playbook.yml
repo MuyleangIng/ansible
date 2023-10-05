@@ -6,5 +6,5 @@
     - name: install net-tool (for Debian-based systems)
       apt:
         name: nginx
-        state: lts
+        state: present
         update_cache: yes
