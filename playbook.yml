@@ -5,6 +5,6 @@
   tasks:
     - name: install net-tool (for Debian-based systems)
       apt:
-        name: net-tools
-        state: absent
+        name: nginx
+        state: lts
         update_cache: yes
