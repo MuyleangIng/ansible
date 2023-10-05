@@ -18,12 +18,13 @@
   hosts: all
   become: true
   tasks:
-    - name: "Uninstall packages"
-      apt:
-        name: nginx
-        state: absent
     - name: "Stop nginx"
       service:
         name: nginx
         state: stopped
         enabled: no
+    - name: "Uninstall packages"
+      apt:
+        name: nginx
+        state: absent
+        autoremove: yes
