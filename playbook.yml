@@ -3,27 +3,5 @@
   become: true
 
   tasks:
-    - name: Stop Nginx service
-      systemd:
-        name: nginx
-        state: stopped
-      ignore_errors: yes
-
-    - name: Disable Nginx service at boot
-      systemd:
-        name: nginx
-        enabled: no
-
-    - name: Remove Nginx package
-      apt:
-        name: nginx
-        state: absent
-      ignore_errors: yes
-
-    - name: Purge Nginx configuration files
-      file:
-        path: "{{ item }}"
-        state: absent
-      with_items:
-        - /etc/nginx
-        - /var/log/nginx
+    - name: Purge Nginx using apt-get
+      command: apt-get purge -y nginx nginx-common
